@@ -4,12 +4,26 @@ using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
 {
+    public static CharacterController Instance;
+
     public GameObject player;
-    public float speed = 0.1f;
+    public float speed = 0.5f;
+
+
+    public List<string> myInventory;
+
     // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        
+        if(Instance == null)
+        {
+            DontDestroyOnLoad(gameObject);
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     // Update is called once per frame
@@ -35,6 +49,8 @@ public class CharacterMovement : MonoBehaviour
             player.transform.position += Vector3.right * speed;
             //Debug.Log("D Pressed");
         }
+
+        if(myInventory.Count >=)
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -47,7 +63,18 @@ public class CharacterMovement : MonoBehaviour
         {
             Destroy(player);
         }
+      
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            Debug.Log("Entered trigger");
+        }
     }
+
+        public void addItem(string item)
+    {
+        myInventory.Add(item);
+    }
+
 
 
 }

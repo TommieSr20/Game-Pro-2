@@ -5,7 +5,7 @@ using UnityEngine;
 public class ItemNameList : MonoBehaviour
 {
 
-    public string itemName;
+    public string Key;
 
     public CharacterMovement myPlayer;
     // Start is called before the first frame update
@@ -23,7 +23,7 @@ public class ItemNameList : MonoBehaviour
 
     private void OnTriggeEnter2D(Collider2D collision)
     {
-        myPlayer.addItem(itemName);
+        myPlayer.addItem(Key);
         Destroy(gameObject);
     }
 }

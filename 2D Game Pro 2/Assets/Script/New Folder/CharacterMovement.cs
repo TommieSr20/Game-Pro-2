@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
 {
-    public static CharacterController Instance;
+    public static CharacterMovement Instance;
 
     public GameObject player;
     public float speed = 0.5f;
@@ -50,7 +50,7 @@ public class CharacterMovement : MonoBehaviour
             //Debug.Log("D Pressed");
         }
 
-        if(myInventory.Count >=)
+        //if (myInventory.Count >=);
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -64,13 +64,13 @@ public class CharacterMovement : MonoBehaviour
             Destroy(player);
         }
       
-        private void OnTriggerEnter2D(Collider2D collision)
-        {
-            Debug.Log("Entered trigger");
-        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("Entered trigger");
     }
 
-        public void addItem(string item)
+    public void addItem(string item)
     {
         myInventory.Add(item);
     }

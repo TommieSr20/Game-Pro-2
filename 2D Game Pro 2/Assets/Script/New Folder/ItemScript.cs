@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemNameList : MonoBehaviour
+public class ItemScript : MonoBehaviour
 {
 
     public string Key;

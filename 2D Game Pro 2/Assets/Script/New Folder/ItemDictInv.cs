@@ -29,7 +29,7 @@ public class ItemDictInv : MonoBehaviour
         {
             Interact();
             AddItem();
-            Destroy(gameObject);
+            Destroy(gameObject.tag== "Key");
         }
     }
 
